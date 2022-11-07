@@ -19,6 +19,7 @@ public class DistributeurTest {
 		transaction.begin();
 		// insertions d'information dans la bdd
 		
+		//------------- création de banque ------------------
 		Banque bk1 = new Banque();
 		bk1.setNom("Crédit mutuel");
 		
@@ -31,7 +32,8 @@ public class DistributeurTest {
 		em.persist(bk1);
 		em.persist(bk2);
 		em.persist(bk3);
-		
+		//------------- fin création de banque ------------------
+		//------------- création de compte ------------------
 		Compte cptMarine = new Compte();
 		cptMarine.setNumero("1258m77");
 		cptMarine.setSolde(1500);
@@ -41,6 +43,14 @@ public class DistributeurTest {
 		cptMarine.setNumero("9454ty22");
 		cptMarine.setSolde(3500);
 		em.persist(cptOceane);
+		
+		Compte cptJoinSister = new Compte();
+		cptJoinSister.setNumero("55487EF54");
+		cptJoinSister.setSolde(6850);
+		//cptJoinSister.getClients().add();
+		
+		//------------- fin création de compte ------------------
+		//------------- création des opérations ------------------
 		
 		Calendar calop1 = Calendar.getInstance();
 		calop1.set(2022, 10, 7);
@@ -62,6 +72,9 @@ public class DistributeurTest {
 		op2.setCompte(cptOceane);
 		em.persist(op2);
 		
+		//------------- fin création des opérations ------------------
+		//------------- création des adresses ------------------
+		
 		Adresse adresseMarine = new Adresse();
 		adresseMarine.setNumero(91);
 		adresseMarine.setRue("rue Rambuteau");
@@ -73,7 +86,8 @@ public class DistributeurTest {
 		adresseOceane.setRue("rue desirée");
 		adresseOceane.setCodePostal(69001);
 		adresseOceane.setVille("Lyon");
-		
+		//------------- fin création des adresses ------------------
+		//------------- création de clients ------------------
 		Client cli1 = new Client();
 		cli1.setNom("DESMIER");
 		cli1.setPrenom("Marine");
@@ -100,6 +114,34 @@ public class DistributeurTest {
 		cli2.setBanque(bk2);
 		cli2.getComptes().add(cptOceane);
 		em.persist(cli2);
+		
+		//------------- fin création de clients ------------------
+		//------------- création de livretA ------------------
+		LivretA livA = new LivretA();
+		livA.setNumero("56787A");
+		livA.setSolde(1160);
+		livA.setTaux(15);
+		em.persist(livA);
+		
+		LivretA livA2 = new LivretA();
+		livA2.setNumero("5487A");
+		livA2.setSolde(660);
+		livA2.setTaux(15);
+		em.persist(livA2);
+		
+		cli1.getComptes().add(livA);
+		cli2.getComptes().add(livA2);
+		//------------- fin création de livretA ------------------
+		//------------- création d'assurancevie ------------------
+		AssuranceVie assuVie = new AssuranceVie();
+		assuVie.setNumero("123456AS");
+		assuVie.setSolde(152);
+		assuVie.setTaux(8);
+		em.persist(assuVie);
+		//------------- fin création d'assuranceVie ------------------
+		//------------- création de virement ------------------
+		
+		//------------- fin création de virement ------------------
 		
 		transaction.commit();
 	}
