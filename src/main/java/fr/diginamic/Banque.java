@@ -24,7 +24,7 @@ public class Banque {
 	private String nom;
 
 	// une banque à plusieurs clients
-	@OneToMany(mappedBy = "client")
+	@OneToMany(mappedBy = "banque")
 	private List<Client> clients = new ArrayList<Client>();
 	
 	/**
@@ -32,6 +32,38 @@ public class Banque {
 	 */
 	public Banque() {
 		super();
+	}
+
+	/**
+	 * Getter pour l'attribut nom 
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * Setter pour l'attribut nom
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * Getter pour l'attribut clients 
+	 * @return the clients
+	 */
+	public List<Client> getClients() {
+		return clients;
+	}
+
+	/**
+	 * Setter pour l'attribut clients
+	 * @param clients the clients to set
+	 */
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
 	}
 	
 	

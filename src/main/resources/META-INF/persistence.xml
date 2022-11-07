@@ -4,14 +4,19 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 	<persistence-unit name="banque_tp4" transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banque_tp4" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.show_sql" value="true" />
+			
+<!-- 			regénère automatiquement le schema à chaque redémarrage de l’application: -->
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			
+<!-- 			Cette propriété ne créé que les nouvelles tables après chaque redémarrage: -->
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			
 		</properties>
 	</persistence-unit>

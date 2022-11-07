@@ -40,4 +40,71 @@ public class Operation {
 	public Operation() {
 		
 	}
+
+	/**
+	 * Getter pour l'attribut dateOperation 
+	 * @return the dateOperation
+	 */
+	public Date getDateOperation() {
+		return dateOperation;
+	}
+
+	/**
+	 * Setter pour l'attribut dateOperation
+	 * @param dateOperation the dateOperation to set
+	 */
+	public void setDateOperation(Date dateOperation) {
+		this.dateOperation = dateOperation;
+	}
+
+	/**
+	 * Getter pour l'attribut montant 
+	 * @return the montant
+	 */
+	public double getMontant() {
+		return montant;
+	}
+
+	/**
+	 * Setter pour l'attribut montant
+	 * @param montant the montant to set
+	 */
+	public void setMontant(double montant) {
+		this.montant = montant;
+	}
+
+	/**
+	 * Getter pour l'attribut motif 
+	 * @return the motif
+	 */
+	public String getMotif() {
+		return motif;
+	}
+
+	/**
+	 * Setter pour l'attribut motif
+	 * @param motif the motif to set
+	 */
+	public void setMotif(String motif) {
+		this.motif = motif;
+	}
+
+	/**
+	 * Getter pour l'attribut compte 
+	 * @return the compte
+	 */
+	public Compte getCompte() {
+		return compte;
+	}
+
+	/**
+	 * Setter pour l'attribut compte
+	 * @param compte the compte to set
+	 */
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+
+	
+	
 }
